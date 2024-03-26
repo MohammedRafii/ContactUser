@@ -21,7 +21,8 @@ const LoginOrRegister = ({isRegister=false}) => {
     event.preventDefault();
     try {
       const lowerEmail=email.toLowerCase()
-      let sendData = isRegister?{name,email:lowerEmail, password}:{email:lowerEmail, password}
+      const nameFormat=name.split(" ").map(word=>word.charAt(0).toUpperCase()+word.slice(1)).join(" ")
+      let sendData = isRegister?{name:nameFormat,email:lowerEmail, password}:{email:lowerEmail, password}
       const response = await axios.post(`/user/${isRegister?'new':'login'}`, sendData, {
         headers: { "Content-Type": "application/json" },
         withCredentials: true,
@@ -49,11 +50,11 @@ const LoginOrRegister = ({isRegister=false}) => {
     <div className="flex justify-center w-full items-center bg-gradient-to-br from-[rgb(246,193,246)] to-[#09726d] h-screen">
         <section className="sm:w-auto w-[80%] shadow-xl border-2 border-[#86fdf3] rounded-2xl sm:py-[3rem] sm:px-[5rem] py-3 px-[3rem] bg-[#a1f9f1]">
           <h1 className="text-center underline underline-offset-8 my-4 text-4xl pb-8">{isRegister?'Register':'Login'}</h1>
-          <form className="flex flex-col gap-8" onSubmit={onSubmit}>
+          <form className="flex flex-col gap-x-2 gap-y-4 sm:gap-8" onSubmit={onSubmit}>
             {isRegister && (<input
               className={inputClass}
               autoFocus
-              value={name.split(" ").map(word=>word.charAt(0).toUpperCase()+word.slice(1)).join(" ")}
+              value={name}
               onChange={(e) => setName(e.target.value)}
               type="text"
               name="name"

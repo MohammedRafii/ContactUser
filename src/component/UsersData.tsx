@@ -10,19 +10,18 @@ type DataContacts = {
 }
 const UsersData = ({ allData}: { allData: DataContacts}) => {
   const { _id, name } = allData;
-  const BgArr =["#FFE5B4","#8722EB","#FFE4E1","#66FF66" ,"#D2B48C" ,"#11FFFF"]  
-const  logoBgArr=["#4B0082","#8B4513","#006400","#805000","#2E8B57","#E6E6FA"]
+const  logoBgArr=["#FFE4E1","#8B4513","#D2B48C","#805000","#2E8B57","#E6E6FA"]
 const getRandomElement=(arr:string[])=>{
   const randomIndex = Math.floor(Math.random()*arr.length)
   return arr[randomIndex]
 }
   return (
-    <figure className={`shadow-lg backdrop-blur-xl bg-[#a4f7e2] text-black p-3 rounded-md w-[300px] mt-3 mb-2 sm:h-[300px] h-[280px] flex flex-col justify-around  justify-self-center`}
+    <figure className={`shadow-lg backdrop-blur-xl bg-[#a4f7e2] text-black p-3 rounded-md w-[300px] mt-3 mb-2 sm:h-[300px] h-[280px] flex flex-col justify-around justify-items-center`}
     >
               <figcaption
                className="flex border-b border-black  justify-between px-3  items-center"
               >
-                <h3 className="text-2xl italic uppercase w-[80%]">
+                <h3 className="text-2xl uppercase w-[80%]">
                   {name.slice(0, 10)}
                   {name.length > 10 ? "..." : ""}
                 </h3>
@@ -32,7 +31,7 @@ const getRandomElement=(arr:string[])=>{
               </figcaption>
                <div className='mx-auto rounded-full px-8 py-6 text-4xl flex justify-center items-center '
                style={
-                 {  backgroundColor: getRandomElement(logoBgArr),color:getRandomElement(BgArr) }}
+                 {  backgroundColor: getRandomElement(logoBgArr) }}
                >
 
                 {name.charAt(0).toUpperCase()}

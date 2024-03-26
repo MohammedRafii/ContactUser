@@ -39,7 +39,7 @@ const Contacts = () => {
   
   return (
     <>
-      <main className={`max-w-[80%] min-h-full ${data?.length>0 && 'self-center'}grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] justify-center gap-6 mx-auto relative `}>
+      <main className={`max-w-[80%] min-h-auto h-[50vh] ${data?.length<1 ? 'flex place-self-center':'flex flex-col flex-wrap justify-center'} mx-auto  gap-3  relative `}>
       <a
         href="https://mohammedrafi.vercel.app"
         target="_blank"
