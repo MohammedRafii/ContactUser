@@ -22,7 +22,7 @@ const Delete = () => {
 
   const { mutate } = useMutation({
     mutationFn: deleteHandler,
-    onSuccess:(data, variables, context) =>{
+    onSuccess:() =>{
       queryClient.invalidateQueries({
         queryKey:["contacts"],exact:true
       })
