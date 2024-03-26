@@ -20,7 +20,8 @@ const LoginOrRegister = ({isRegister=false}) => {
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      let sendData = isRegister?{name,email, password}:{email, password}
+      const lowerEmail=email.toLowerCase()
+      let sendData = isRegister?{name,email:lowerEmail, password}:{email:lowerEmail, password}
       const response = await axios.post(`/user/${isRegister?'new':'login'}`, sendData, {
         headers: { "Content-Type": "application/json" },
         withCredentials: true,
@@ -61,7 +62,7 @@ const LoginOrRegister = ({isRegister=false}) => {
             />)}
             <input
               className={inputClass}
-              value={email.toLowerCase()}
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
               autoFocus ={!isRegister&&true}
               type="email"

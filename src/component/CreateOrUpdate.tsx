@@ -59,7 +59,7 @@ const CreateOrUpdate = ({isEditable=false}) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
       const name= String(formData.get("name"))!
-        const email= String(formData.get("email"))!
+        const email= String(formData.get("email")).toLowerCase()!
         const phone= String(formData.get("phone"))!
     await mutate({name,email,phone});
   };
@@ -101,7 +101,7 @@ const CreateOrUpdate = ({isEditable=false}) => {
                 className={inputClass}
                 type="email"
                 name="email"
-                value={email.toLowerCase()}
+                value={email}
               autoComplete="email"
                 required
                 id="email"
