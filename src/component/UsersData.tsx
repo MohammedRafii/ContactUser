@@ -10,13 +10,13 @@ type DataContacts = {
 }
 const UsersData = ({ allData}: { allData: DataContacts}) => {
   const { _id, name } = allData;
-const  logoBgArr=["#FFE4E1","#8B4513","#D2B48C","#805000","#2E8B57","#E6E6FA"]
+const  logoBgArr=["#4bf64b","skyblue","orange","pink","#fbfb48","#5af65f","#e94eec"]
 const getRandomElement=(arr:string[])=>{
   const randomIndex = Math.floor(Math.random()*arr.length)
   return arr[randomIndex]
 }
   return (
-    <figure className={`shadow-lg backdrop-blur-xl bg-[#a4f7e2] text-black p-3 rounded-md w-[300px] mt-3 mb-2 sm:h-[300px] h-[280px] flex flex-col justify-around justify-items-center`}
+    <figure className={`shadow-lg backdrop-blur-xl bg-[#bffaeb] text-[#000] p-3 rounded-md w-[300px] mt-3 mb-2 sm:h-[300px] h-[280px] flex flex-col justify-around justify-items-center`}
     >
               <figcaption
                className="flex border-b border-black  justify-between px-3  items-center"

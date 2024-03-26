@@ -68,10 +68,10 @@ const CreateOrUpdate = ({isEditable=false}) => {
 
   return (
     <main className="fixed z-20 flex justify-center items-center w-full h-screen top-0 left-0 bg-gradient-to-tr from-[rgba(255,255,255,0.3)] to-[rgba(255,255,255,0.1)] backdrop-blur-[10px]">
-      <section ref={ref} className="relative bg-gradient-to-tr from-[rgba(115,244,226,0.3)] to-[rgba(110,55,198,0.1)] backdrop-blur-sm rounded-xl p-2 w-[90%]">
+      <section ref={ref} className="relative bg-gradient-to-tr from-[rgba(115,244,226,0.3)] to-[rgba(110,55,198,0.1)] backdrop-blur-sm rounded-xl p-2 sm:w-auto md:w-[60%] sm:h-auto w-[90%]">
         <div className="flex flex-col bg-[#c2c2f3] justify-around h-[60vh] rounded-xl">
-          <h1 className="mx-auto px-1 pt-1">{isEditable ? 'Updating':'Creating'} User</h1>
-          <div className="flex items-center justify-center mt-3 mx-auto px-6 py-3 text-5xl rounded-full"
+          <h1 className="mx-auto px-1 sm:text-3xl text-xl pt-1">{isEditable ? 'Updating':'Creating'} User</h1>
+          <div className="flex items-center justify-center mt-3 mx-auto py-6 px-10  text-5xl rounded-full"
             style={
               nameLogo.length > 0
                 ? { backgroundColor: bgColor }
@@ -81,7 +81,7 @@ const CreateOrUpdate = ({isEditable=false}) => {
             {nameLogo}
           </div>
           <form onSubmit={handleSubmit} className="flex flex-col gap-1 px-2 items-center justify-evenly " method="post" encType="multipart/form-data">
-            <div className="flex px-3 py-2">
+            <div className="flex px-6 py-2 w-full">
               <label htmlFor="name">Name: </label>
               <input
                 className={inputClass}
@@ -95,7 +95,7 @@ const CreateOrUpdate = ({isEditable=false}) => {
                 onChange={handleChange}
               />
             </div>
-            <div className="flex px-3 py-2">
+            <div className="flex px-6 py-2 w-full">
               <label htmlFor="email">Email: </label>
               <input
                 className={inputClass}
@@ -108,7 +108,7 @@ const CreateOrUpdate = ({isEditable=false}) => {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div className="flex px-3 py-2">
+            <div className="flex px-6 py-2 w-full">
               <label htmlFor="phone">Phone: </label>
               <input
                 className={inputClass}

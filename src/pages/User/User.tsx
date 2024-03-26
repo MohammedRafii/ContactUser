@@ -39,7 +39,7 @@ const Contacts = () => {
   
   return (
     <>
-      <main className={`max-w-[80%] min-h-auto h-[50vh] ${data?.length<1 ? 'flex place-self-center':'flex flex-col flex-wrap justify-center'} mx-auto  gap-3  relative `}>
+      <main className={`max-w-[80%] min-h-[90vh] flex flex-col items-center gap-3 relative`}>
       <a
         href="https://mohammedrafi.vercel.app"
         target="_blank"
@@ -57,12 +57,15 @@ const Contacts = () => {
       >
         <IoArrowBack  />
       </Link>
+      <div className="flex flex-wrap justify-center gap-6">
+
         {data.length > 0 ? (data.length>=1&&data.slice(page*7-7,page*7).map(({ _id, email, name, phone }: DataContacts) => (
             <UsersData key={_id} allData={{_id,email,name,phone}}/>
-          ))
-        ) : (
-          <div className="text-2xl text-center">There is no contact, you can add it</div>
-        )}
+            ))
+            ) : (
+              <div className="text-2xl text-center">There is no contact, you can add it</div>
+              )}
+              </div>
         <div>
 
         {data.length>7 &&<Pagination page={page} data={data} selectPageHandler={selectPageHandler} />}

@@ -24,9 +24,9 @@ const Header = () => {
   const linksClass = " font-extrabold text-[rgb(19,115,153)] underline-offset-8 underline decoration-2 duration-200"
     return (
       <>
-        <nav className="sticky z-20 top-0 w-full min-h-[10vh] flex flex-col items-center justify-between px-16 bg-gradient-to-r from-[#e487e4] to-[#88e3de] shadow-xl">
-          <h1 className="lg:text-4xl text-2xl text-center font-bold italic text-sky-800 ">Contact App</h1>
-          <ul className="flex py-2 sm:gap-20 gap-8">
+        <nav className="sticky z-20 top-0 w-full flex flex-col sm:flex-row justify-between items-center px-16 bg-gradient-to-r from-[#f6a2f6] to-[#b0f7f4] shadow-xl">
+          <h1 className="lg:text-5xl md:text-3xl text-2xl text-center font-bold italic text-sky-800 ">Contact App</h1>
+          <ul className="flex sm:mx-0 mx-auto py-2 sm:gap-16 gap-8">
             <li>
               <Link
                 to="/contacts"
@@ -50,11 +50,11 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <button className="text-2xl" onClick={handleLogout}>Logout</button>
+              <button className= "text-rose-700 lg:text-3xl text-xl font-medium" onClick={handleLogout}>Logout</button>
             </li>
           </ul>
         </nav>
-        <div className="min-h-[90vh] flex justify-center pt-11 bg-gradient-to-r from-[#f7a2f7b1] to-[#a2fffab1] ">
+        <div className="min-h-[90vh] flex justify-center pt-11 bg-gradient-to-r from-[#ffacff7d] to-[#8aceff9c] ">
           <Outlet />
         </div>
       </>
