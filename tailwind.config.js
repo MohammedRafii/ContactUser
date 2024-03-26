@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        style:["Dancing Script", "cursive"]
+        "style":["Dancing Script", "cursive"]
       }
     },
   },
