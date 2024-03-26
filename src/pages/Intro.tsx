@@ -16,7 +16,7 @@ const Intro = () => {
         <Link className="py-2 my-7 px-8 rounded-3xl sm:text-xl md:text-2xl lg:text-3xl outline-none bg-gradient-to-l from-[rgb(130,255,159)] to-[rgb(116,255,234)]" to="/login">
           Click Me
         </Link>
-        <p className="font-style text-purple-500 text-xl sm:text-2xl md:text-3xl lg:text-4xl">Save Contacts</p>
+        <p className="font-style font-bold text-purple-500 text-3xl lg:text-4xl">Save Contacts</p>
       </div>
     </>
   );
