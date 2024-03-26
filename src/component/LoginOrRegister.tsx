@@ -52,7 +52,7 @@ const LoginOrRegister = ({isRegister=false}) => {
             {isRegister && (<input
               className={inputClass}
               autoFocus
-              value={name}
+              value={name.split(" ").map(word=>word.charAt(0).toUpperCase()+word.slice(1)).join(" ")}
               onChange={(e) => setName(e.target.value)}
               type="text"
               name="name"
@@ -61,7 +61,7 @@ const LoginOrRegister = ({isRegister=false}) => {
             />)}
             <input
               className={inputClass}
-              value={email}
+              value={email.toLowerCase()}
               onChange={(e) => setEmail(e.target.value)}
               autoFocus ={!isRegister&&true}
               type="email"

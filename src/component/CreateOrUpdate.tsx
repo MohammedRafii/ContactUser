@@ -101,7 +101,7 @@ const CreateOrUpdate = ({isEditable=false}) => {
                 className={inputClass}
                 type="email"
                 name="email"
-                value={email}
+                value={email.toLowerCase()}
               autoComplete="email"
                 required
                 id="email"
