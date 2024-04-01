@@ -17,12 +17,15 @@ import Contacts from "./pages/User/User";
 import View from "./pages/User/View";
 import axios from "axios";
 const rootRoute = createRootRoute({
-  component: () => (
-    <>
+  component: () => {
+    if (!navigator.cookieEnabled) {
+   return <div className="text-4xl text-center">Cookies are currently disabled in your browser. Please enable cookies to use this website.</div>
+}
+    return (<>
       <Toaster/>
       <Outlet />
-    </>
-  ),
+    </>)
+  },
 });
 
 const landingPageRoute = createRoute({
