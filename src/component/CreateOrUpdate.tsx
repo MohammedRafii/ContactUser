@@ -4,7 +4,8 @@ import axios from "axios";
 import { useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { useClickOutSide } from "../hooks/useClickOutside";
-import useDebounce, { debounceColor } from "../hooks/useDebounce";
+import useDebounce from "../hooks/useDebounce";
+import {getRandomElement} from "./UsersData"
 type Contact = {
   name?:string,
   email?:string,
@@ -20,11 +21,8 @@ const CreateOrUpdate = ({isEditable=false}) => {
     
   useClickOutSide(ref, () => navigate({ to: "/contacts" }));
   const nameLogo: string = useDebounce(name, 300);
-  
-  const bgColor = debounceColor(name,500)
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-  };
+
+  const logoBgArr=["#4bf64b","skyblue","orange","pink","#fbfb48","#5af65f","#e94eec"]
   
   const addContact = async (contact:Contact) => {
     try {
@@ -74,7 +72,7 @@ const CreateOrUpdate = ({isEditable=false}) => {
           <div className="flex items-center justify-center mt-3 mx-auto py-6 px-10  text-5xl rounded-full"
             style={
               nameLogo.length > 0
-                ? { backgroundColor: bgColor }
+                ? { backgroundColor: getRandomElement(logoBgArr) }
                 : { backgroundColor: "transparent" }
             }
           >
@@ -92,7 +90,7 @@ const CreateOrUpdate = ({isEditable=false}) => {
               autoComplete="name"
                 required
                 id="name"
-                onChange={handleChange}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="flex px-6 py-2 w-full">
