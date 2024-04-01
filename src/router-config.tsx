@@ -18,9 +18,6 @@ import View from "./pages/User/View";
 import axios from "axios";
 const rootRoute = createRootRoute({
   component: () => {
-    if (!navigator.cookieEnabled) {
-   return <div className="text-4xl text-center">Cookies are currently disabled in your browser. Please enable cookies to use this website.</div>
-}
     return (<>
       <Toaster/>
       <Outlet />
