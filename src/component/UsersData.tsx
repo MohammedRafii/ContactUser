@@ -11,7 +11,7 @@ type DataContacts = {
 const UsersData = ({ allData}: { allData: DataContacts}) => {
   const { _id, name } = allData;
 const  logoBgArr=["#4bf64b","skyblue","orange","pink","#fbfb48","#5af65f","#e94eec"]
-const getRandomElement=(arr:string[])=>{
+export const getRandomElement=(arr:string[])=>{
   const randomIndex = Math.floor(Math.random()*arr.length)
   return arr[randomIndex]
 }
