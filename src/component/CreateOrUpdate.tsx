@@ -70,7 +70,7 @@ const CreateOrUpdate = ({isEditable=false}) => {
         <div className="flex flex-col bg-[#c2c2f3] justify-around h-[60vh] rounded-xl">
           <h1 className="mx-auto px-1 sm:text-3xl text-xl pt-1">{isEditable ? 'Updating':'Creating'} User</h1>
           <div className="flex items-center justify-center mt-3 mx-auto py-6 px-10  text-5xl rounded-full"
-            style={nameLogo.length > 0 && { backgroundColor: getRandomElement(logoBgArr) }}
+            style={nameLogo.length > 0 ? { backgroundColor: getRandomElement(logoBgArr) } : {}}
           >
             {nameLogo}
           </div>
