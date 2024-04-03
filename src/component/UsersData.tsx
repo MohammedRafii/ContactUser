@@ -8,13 +8,14 @@ type DataContacts = {
   email: string;
   phone: number;
 }
-const UsersData = ({ allData}: { allData: DataContacts}) => {
-  const { _id, name } = allData;
-const  logoBgArr=["#4bf64b","skyblue","orange","pink","#fbfb48","#5af65f","#e94eec"]
 export const getRandomElement=(arr:string[])=>{
   const randomIndex = Math.floor(Math.random()*arr.length)
   return arr[randomIndex]
 }
+const UsersData = ({ allData}: { allData: DataContacts}) => {
+  const { _id, name } = allData;
+const  logoBgArr=["#4bf64b","skyblue","orange","pink","#fbfb48","#5af65f","#e94eec"]
+
   return (
     <figure className={`shadow-lg backdrop-blur-xl bg-[#bffaeb] text-[#000] p-3 rounded-md w-[300px] mt-3 mb-2 sm:h-[300px] h-[280px] flex flex-col justify-around justify-items-center`}
     >
