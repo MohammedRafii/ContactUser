@@ -11,11 +11,15 @@ const LoginOrRegister = ({isRegister=false}) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [passwordVisible, setPasswordVisible] = useState(false);
-
+  const [cookieBanner, setCookieBanner] = useState(true);
+  
   const showPassword = () => {
     setPasswordVisible((prev) => !prev);
   };
 
+  setTimeout(()=>{
+    setCookieBanner(false)
+  },10000)
   
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -48,7 +52,7 @@ const LoginOrRegister = ({isRegister=false}) => {
   const inputClass = "sm:text-2xl text-lg pr-5 pl-2 py-2 w-full border-b-2 border-black  outline-none bg-transparent placeholder:text-[rgba(59,58,58,0.843)]"
   return (
     <div className="flex relative justify-center w-full items-center bg-gradient-to-br from-[rgb(246,193,246)] to-[#09726d] h-screen">
-      <div className="absolute top-3 text-center sm:text-4xl text-2xl">If Cookies are disabled in your browser. Please enable cookies to use this website.</div>
+      {cookieBanner && <div className="absolute top-3 text-center sm:text-4xl text-2xl">If Cookies are disabled in your browser. Please enable cookies to use this website.</div>}
         <section className="sm:w-auto w-[80%] shadow-xl border-2 border-[#86fdf3] rounded-2xl sm:py-[3rem] sm:px-[5rem] py-3 px-[1rem] bg-[#a1f9f1]">
           <h1 className="text-center underline underline-offset-8 my-4 sm:text-4xl text-2xl pb-8">{isRegister?'Register':'Login'}</h1>
           <form className="flex flex-col gap-y-4 sm:gap-8" onSubmit={onSubmit}>
